@@ -1,0 +1,155 @@
+/* Reset basic */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Body */
+body {
+  font-family: 'Arial', sans-serif;
+  background: #f5f5f5;
+  color: #333;
+  line-height: 1.6;
+}
+
+/* Header */
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: #000;
+  color: #fff;
+  padding: 15px 20px;
+  flex-wrap: wrap;
+}
+
+header .logo img {
+  height: 50px;
+}
+
+nav ul {
+  display: flex;
+  list-style: none;
+  gap: 15px;
+  flex-wrap: wrap;
+}
+
+nav ul li a {
+  color: #fff;
+  text-decoration: none;
+  font-weight: bold;
+  transition: 0.3s;
+}
+
+nav ul li a:hover {
+  color: #ff0000;
+}
+
+.language-switcher button {
+  margin-left: 5px;
+  padding: 5px 10px;
+  cursor: pointer;
+  border: none;
+  border-radius: 5px;
+  background: #fff;
+  color: #000;
+  font-weight: bold;
+  transition: 0.3s;
+}
+
+.language-switcher button:hover {
+  background: #ff0000;
+  color: #fff;
+}
+
+/* Sections */
+section {
+  padding: 40px 20px;
+  text-align: center;
+}
+
+h1, h2, h3 {
+  margin-bottom: 15px;
+}
+
+/* Collections */
+.collection {
+  border: 1px solid #ccc;
+  background: #fff;
+  border-radius: 10px;
+  display: inline-block;
+  width: 250px;
+  margin: 15px;
+  padding: 10px;
+  vertical-align: top;
+  transition: 0.3s;
+}
+
+.collection:hover {
+  transform: scale(1.05);
+}
+
+.collection img {
+  width: 100%;
+  border-radius: 10px;
+  margin-bottom: 10px;
+}
+
+/* Form */
+form {
+  max-width: 450px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  background: #fff;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0px 0px 10px rgba(0,0,0,0.1);
+}
+
+input, select, textarea, button {
+  padding: 10px;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+  width: 100%;
+  font-size: 16px;
+}
+
+textarea {
+  resize: vertical;
+}
+
+/* Button */
+button {
+  background: #000;
+  color: #fff;
+  cursor: pointer;
+  font-weight: bold;
+  transition: 0.3s;
+}
+
+button:hover {
+  background: #ff0000;
+}
+
+/* Footer */
+footer {
+  background: #222;
+  color: #fff;
+  padding: 20px;
+  text-align: center;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  nav ul {
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .collection {
+    width: 80%;
+  }
+}
