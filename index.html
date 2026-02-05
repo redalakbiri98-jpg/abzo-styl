@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ABZO STYLE</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<!-- Header -->
+<header>
+  <div class="logo">
+    <img src="logo.png" alt="ABZO STYLE">
+  </div>
+  <nav>
+    <ul>
+      <li><a href="#home">Home</a></li>
+      <li><a href="#collections">Collections</a></li>
+      <li><a href="#order">Order</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+    <div class="language-switcher">
+      <button onclick="setLang('fr')">FR</button>
+      <button onclick="setLang('en')">EN</button>
+      <button onclick="setLang('ar')">AR</button>
+    </div>
+  </nav>
+</header>
+
+<!-- Home Section -->
+<section id="home">
+  <h1>Welcome to ABZO STYLE</h1>
+  <p>Your Name. Your Style.</p>
+</section>
+
+<!-- Collections Section -->
+<section id="collections">
+  <h2>Collections</h2>
+  <div class="collection">
+    <h3>T-Shirts</h3>
+    <p>Football / Anime / Kran designs</p>
+    <img src="images/tshirt1.jpg" alt="T-Shirt Example">
+  </div>
+  <div class="collection">
+    <h3>Hoodies</h3>
+    <p>Anime-inspired / Motivational quotes</p>
+    <img src="images/hoodie1.jpg" alt="Hoodie Example">
+  </div>
+  <div class="collection">
+    <h3>Casquettes</h3>
+    <p>Logo & Symbols</p>
+    <img src="images/casquette1.jpg" alt="Casquette Example">
+  </div>
+</section>
+
+<!-- Order Section -->
+<section id="order">
+  <h2>Place Your Order</h2>
+  <form id="orderForm">
+    <label for="name">Name / Nom / الاسم</label>
+    <input type="text" id="name" required>
+
+    <label for="age">Age / Âge / العمر</label>
+    <input type="number" id="age">
+
+    <label for="phone">Phone / Téléphone / رقم الهاتف</label>
+    <input type="text" id="phone" required>
+
+    <label for="city">City / Ville / المدينة</label>
+    <input type="text" id="city">
+
+    <label for="product">Product / Produit / المنتج</label>
+    <select id="product" required>
+      <option value="T-Shirt">T-Shirt</option>
+      <option value="Hoodie">Hoodie</option>
+      <option value="Casquette">Casquette</option>
+    </select>
+
+    <label for="designType">Design Type / Type de design / نوع التصميم</label>
+    <select id="designType" required>
+      <option value="Anime">Anime</option>
+      <option value="Quote">Quote</option>
+      <option value="Other">Other</option>
+    </select>
+
+    <label for="tshirtName">T-shirt Name / Nom sur le T-shirt / الاسم على التي-شيرت</label>
+    <input type="text" id="tshirtName">
+
+    <label for="number">Number / Numéro / الرقم</label>
+    <input type="text" id="number">
+
+    <label for="size">Size / Taille / المقاس</label>
+    <input type="text" id="size">
+
+    <label for="notes">Notes / Notes / ملاحظات</label>
+    <textarea id="notes"></textarea>
+
+    <button type="button" onclick="sendOrder()">Order via WhatsApp & Email</button>
+  </form>
+</section>
+
+<!-- Footer -->
+<footer id="contact">
+  <p>Contact: <span id="email">zolareda49@gmail.com</span></p>
+  <p>WhatsApp: +212 768-754602</p>
+</footer>
+
+<!-- Script -->
+<script>
+function sendOrder() {
+  const name = document.getElementById('name').value;
+  const age = document.getElementById('age').value;
+  const phone = document.getElementById('phone').value;
+  const city = document.getElementById('city').value;
+  const product = document.getElementById('product').value;
+  const designType = document.getElementById('designType').value;
+  const tshirtName = document.getElementById('tshirtName').value;
+  const number = document.getElementById('number').value;
+  const size = document.getElementById('size').value;
+  const notes = document.getElementById('notes').value;
+
+  const message = `ABZO STYLE - New Order 🔥
+Name: ${name}
+Age: ${age}
+Phone: ${phone}
+City: ${city}
+Product: ${product}
+Design Type: ${designType}
+T-shirt Name: ${tshirtName}
+Number: ${number}
+Size: ${size}
+Notes: ${notes}`;
+
+  const whatsappNumber = "212768754602";
+  window.open(`https://wa.me/${whatsappNumber}?text=${encodeURIComponent(message)}`);
+
+  const email = "zolareda49@gmail.com";
+  window.location.href = `mailto:${email}?subject=ABZO STYLE Order&body=${encodeURIComponent(message)}`;
+}
+
+function setLang(lang) {
+  alert("Language switcher: " + lang + " (Translations can be implemented)");
+}
+</script>
+
+</body>
+</html>
